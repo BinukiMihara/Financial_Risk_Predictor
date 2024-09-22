@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Risk Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Financial Risk Prediction</h2>
+        <form action="/predict" method="POST">
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required min="18" max="69">
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Non-binary">Non-binary</option>
+                </select>
+            </div>
+
+            <!-- Education Level -->
+            <div class="form-group">
+                <label for="education">Education Level:</label>
+                <select class="form-control" id="education" name="education" required>
+                    <option value="Bachelor's">Bachelor's</option>
+                    <option value="High school">High school</option>
+                    <option value="PhD">PhD</option>
+                </select>
+            </div>
+
+            <!-- Marital Status -->
+            <div class="form-group">
+                <label for="marital_status">Marital Status:</label>
+                <select class="form-control" id="marital_status" name="marital_status" required>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                </select>
+            </div>
+
+            <!-- Income -->
+            <div class="form-group">
+                <label for="income">Income (in USD):</label>
+                <input type="number" class="form-control" id="income" name="income" required min="20000" max="120000">
+            </div>
+
+            <!-- Credit Score -->
+            <div class="form-group">
+                <label for="credit_score">Credit Score:</label>
+                <input type="number" class="form-control" id="credit_score" name="credit_score" required min="600"
+                    max="799">
+            </div>
+
+            <!-- Loan Amount -->
+            <div class="form-group">
+                <label for="loan_amount">Loan Amount (in USD):</label>
+                <input type="number" class="form-control" id="loan_amount" name="loan_amount" required min="5000"
+                    max="50000">
+            </div>
+
+            <!-- Loan Purpose -->
+            <div class="form-group">
+                <label for="loan_purpose">Loan Purpose:</label>
+                <select class="form-control" id="loan_purpose" name="loan_purpose" required>
+                    <option value="Home">Home</option>
+                    <option value="Auto">Auto</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Business">Business</option>
+                </select>
+            </div>
+
+            <!-- Employment Status -->
+            <div class="form-group">
+                <label for="employment_status">Employment Status:</label>
+                <select class="form-control" id="employment_status" name="employment_status" required>
+                    <option value="Employed">Employed</option>
+                    <option value="Unemployed">Unemployed</option>
+                    <option value="Self-employed">Self-employed</option>
+                </select>
+            </div>
+
+            <!-- Years at Current Job -->
+            <div class="form-group">
+                <label for="years_at_job">Years at Current Job:</label>
+                <input type="number" class="form-control" id="years_at_job" name="years_at_job" required min="0"
+                    max="19">
+            </div>
+
+            <!-- Payment History -->
+            <div class="form-group">
+                <label for="payment_history">Payment History:</label>
+                <select class="form-control" id="payment_history" name="payment_history" required>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Poor">Poor</option>
+                </select>
+            </div>
+
+            <!-- Debt-to-Income Ratio -->
+            <div class="form-group">
+                <label for="dti_ratio">Debt-to-Income Ratio:</label>
+                <input type="number" class="form-control" id="dti_ratio" name="dti_ratio" step="0.01" required min="0.1"
+                    max="0.6">
+            </div>
+
+            <!-- Assets Value -->
+            <div class="form-group">
+                <label for="assets_value">Assets Value (in USD):</label>
+                <input type="number" class="form-control" id="assets_value" name="assets_value" required min="20100"
+                    max="300000">
+            </div>
+
+            <!-- Number of Dependents -->
+            <div class="form-group">
+                <label for="dependents">Number of Dependents:</label>
+                <input type="number" class="form-control" id="dependents" name="dependents" required min="0" max="4">
+            </div>
+
+            <!-- City, State, Country -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+            </div>
+
+            <!-- Previous Defaults -->
+            <div class="form-group">
+                <label for="previous_defaults">Previous Defaults:</label>
+                <input type="number" class="form-control" id="previous_defaults" name="previous_defaults" required
+                    min="0" max="4">
+            </div>
+
+            <!-- Marital Status Change -->
+            <div class="form-group">
+                <label for="marital_status_change">Marital Status Change:</label>
+                <input type="number" class="form-control" id="marital_status_change" name="marital_status_change"
+                    required min="0" max="2">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Predict Financial Risk</button>
+        </form>
+    </div>
+</body>
+
+</html>
